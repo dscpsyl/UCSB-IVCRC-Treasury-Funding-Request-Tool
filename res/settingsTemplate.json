@@ -1,0 +1,19 @@
+{
+    "treasurerName" : "",
+    "treasurerEmail" : "",
+    "treasurerPhone" : "",
+    "slackTags" : "",
+    "expendWkbkId" : "",
+    "minutesDriveFolderId":"",
+    "reqIncompleteDriveFolderId" : "",
+    "completedReqsDriveFolderId" : "",
+    "archiveIncompleteDriveFolderId" : "",
+    "SLACK_BOT_TOKEN" : "",
+    "SLACK_APP_TOKEN" : "",
+    "SLACK_TREASURER_CHANNEL_ID" : "",
+    "SLACK_PUBLICITY_CHANNEL_ID" : "",
+    "SLACK_HISTORY_CHANNEL_ID" : "",
+    "EXPENDATURE_WORKBOOK_GOOGLESHEET_ID" : "",
+    "EXPENDATURE_WORKBOOK_GOOGLESHEET_NAME" : "",
+    "IVCRC_SHARED_DRIVE_ID":""
+}
