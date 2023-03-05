@@ -198,10 +198,9 @@ There are 4 different categories that comes with this CLI with their own command
 4. Utils - Utilities that can be used independently from the rest of the CLI.
    1. Requisition Filler
     - This will help compile a requisition and save it to the desktop.
-    - 
 ### Behind the Scenes Details
 
-Here is some more information about how the CLI works behind the scenes.
+Here is some more information about how the CLI works behind the scenes. All `pre-v1.0.0` versions of the CLI are not in the commit history due to the transition between private to public repositories. All changes are noted in `CHAGNELOG.md` if anyone is curious about the development process. 
 
 #### Database
 The database has a single table named `requests` with the following columns:
