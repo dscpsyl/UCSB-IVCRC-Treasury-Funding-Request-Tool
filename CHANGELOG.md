@@ -8,6 +8,11 @@
 >`Security` in case of vulnerabilities.
 
 
+## v1.0.1
+
+### Fixed
+- `requirements.txt` file now is fully up to date
+
 ## v1.0.0
 
 ### Added
