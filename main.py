@@ -539,7 +539,26 @@ def ReqFormFiller(settings, dataSet=None, cmdLine=False):
     else:
         l.info("##########~[Requisition Filler]~########## \n")
     
-    fields = {}
+    fields = {}    
+    #? Get the type of requisition
+    # Button types are /Off or /Yes
+    _type = input("$: What type of requisition is this? [0: Checks, 1: Journal Entries, 2: PO]: ")
+    if _type == "0":
+        fields["check"] = "/Yes"
+    elif _type == "1":
+        fields["je"] = "/Yes"
+    elif _type == "2":
+        fields["po"] = "/Yes"
+        _poType = input("$: What type of PO is this? [0: Paper, 1: Paperless]: ")
+        if _poType == "0":
+            fields["p"] = "/Yes"
+        elif _poType == "1":
+            fields["pl"] = "/Yes"
+        else:
+            raise Exception("Invalid PO type!")
+    else:
+        raise Exception("Invalid requisition type!")
+    
     fields["dateRequested"] = str(dt.now().strftime("%m/%d/%Y"))
     fields["payableTo"] = input("$: Who is this payable to?: ")
     fields["streetAddress"] = input("$: What is the street address?: ")

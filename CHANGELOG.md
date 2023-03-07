@@ -10,6 +10,9 @@
 
 ## v1.0.1
 
+### Added
+- Requisition filler now helps you complete the type
+
 ### Fixed
 - `requirements.txt` file now is fully up to date
 
