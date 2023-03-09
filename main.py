@@ -154,7 +154,7 @@ def newEntry(settings, slackClient, creds, conn):
     l.debug("Fr: " + frFileId)
     l.debug("Slack Thread: " + slackThread)
     l.debug("Data: " + str(data))
-    l.debug()
+    l.debug("\n")
     
     #? Storing data into database
     l.info("Storing information into database...")
