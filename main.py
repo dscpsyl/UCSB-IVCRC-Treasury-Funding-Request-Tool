@@ -175,13 +175,13 @@ def requisitionPre(settings, slackClient, creds, conn):
     reqN, data = dataGet.dataDBGet(conn)
     
     #? Get file ID's from DB
-    mnID = sqlite.findItem("reqNo", "6", "mnId", "requests", conn)
+    mnID = sqlite.findItem("reqNo", reqN, "mnId", "requests", conn)
     mnID = mnID[0][0]
     
-    faID = sqlite.findItem("reqNo", "6", "faId", "requests", conn)
+    faID = sqlite.findItem("reqNo", reqN, "faId", "requests", conn)
     faID = faID[0][0]
     
-    frID = sqlite.findItem("reqNo", "6", "frId", "requests", conn)
+    frID = sqlite.findItem("reqNo", reqN, "frId", "requests", conn)
     frID = frID[0][0]
     
     #? Get Signed Funding Agreement from requestor 
@@ -193,7 +193,7 @@ def requisitionPre(settings, slackClient, creds, conn):
     budgetPdf = budgetPdf[1:-1]
     
     #? Get meeting minutes 
-    l.debug("Getting meeting minutes from database...")
+    l.info("Getting meeting minutes from database...")
     meetingIdRAW = sqlite.findItem("reqNo", reqN, "mnId", "requests", conn)
     if(len(meetingIdRAW) != 1):
         l.critical("SOMETHING BAD HAS HAPPENED TO FINDING THE RIGHT MEETING MINUTES ID. ABORTING!!!")
@@ -211,11 +211,7 @@ def requisitionPre(settings, slackClient, creds, conn):
     #? Get requisition form filled
     l.debug("Getting requisition template...")
     l.info("Use the commandline to fill out most of the required information: ")
-    reqFillerItems = {}
-    reqFillerItems["eventName"] = data["name"]
-    reqFillerItems["eventDate"] = data["dateStart"]
-    reqFillerItems["meetingDate"] = data["datePass"]
-    templatePdf = ReqFormFiller(reqFillerItems)
+    templatePdf = ReqFormFiller(settings, data)
     l.info("Done.\n")
     
     #? Combine pdf files into one and put it onto the desktop and ask user to fill it out
@@ -235,6 +231,7 @@ def requisitionPre(settings, slackClient, creds, conn):
     
     sTagsD = settings["slackTags"]
     sTagsD = sTagsD.split(",")
+    sTags = ""
     for t in sTagsD:
         sTags += "<@" + t + ">"
     
@@ -569,9 +566,9 @@ def ReqFormFiller(settings, dataSet=None, cmdLine=False):
         fields["eventDate"] = input("$: What is the date of the event?: ")
         fields["meetingDate"] = input("$: What is the date of the meeting that this funding passed?: ")
     else:
-        fields["eventName"] = dataSet["eventName"]
-        fields["eventDate"] = dataSet["eventDate"]
-        fields["meetingDate"] = dataSet["meetingDate"]
+        fields["eventName"] = dataSet["name"]
+        fields["eventDate"] = dataSet["dateStart"]
+        fields["meetingDate"] = dataSet["datePass"]
     fields["subtotal"] = input("$: What is the subtotal?: ")
     if fields["subtotal"] == "":
         fields["subtotal"] = 0
