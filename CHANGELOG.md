@@ -15,6 +15,8 @@
 
 ### Fixed
 - `requirements.txt` file now is fully up to date
+- `newEntry` bugs
+- `requesitionPre` bugs
 
 ## v1.0.0
 
