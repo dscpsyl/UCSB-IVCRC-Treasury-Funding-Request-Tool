@@ -354,7 +354,7 @@ def requisitionPost(settings, slackClient, creds, conn):
     
     #? Link it in the spreadsheet
     l.debug("Linking file in spreadsheet...")
-    sheetData = sheets.sheetsGet(settings["sheetID"], settings["EXPENDATURE_WORKBOOK_GOOGLESHEET_NAME"], creds)
+    sheetData = sheets.sheetsGet(settings["EXPENDATURE_WORKBOOK_GOOGLESHEET_ID"], settings["EXPENDATURE_WORKBOOK_GOOGLESHEET_NAME"], creds)
     rows = sheetData["values"]
     for r in rows:
         if data["name"] == r:
