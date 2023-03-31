@@ -17,6 +17,7 @@
 - `requirements.txt` file now is fully up to date
 - `newEntry` bugs
 - `requesitionPre` bugs
+- Email sending with attachment bugs
 
 ## v1.0.0
 
