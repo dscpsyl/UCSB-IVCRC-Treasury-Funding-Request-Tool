@@ -354,15 +354,15 @@ def requisitionPost(settings, slackClient, creds, conn):
     
     #? Link it in the spreadsheet
     l.debug("Linking file in spreadsheet...")
-    sheetData = sheets.sheetsGet(settings["EXPENDATURE_WORKBOOK_GOOGLESHEET_ID"], settings["EXPENDATURE_WORKBOOK_GOOGLESHEET_NAME"], creds)
+    sheetData = sheets.sheetsGet(settings["expendWkbkId"], settings["EXPENDATURE_WORKBOOK_GOOGLESHEET_NAME"], creds)
     rows = sheetData["values"]
     for r in rows:
-        if data["name"] == r:
+        if data["name"] == r[0]:
             _dTxt = r[0]
             r[0] = '=HYPERLINK("https://drive.google.com/file/d/' + completedAgreementID + '", "' + _dTxt +'")'
             break
     sheetData["values"] = rows
-    sheets.sheetUpdate(settings["sheetID"], data, sheetData["range"], creds)
+    sheets.sheetUpdate(settings["expendWkbkId"], sheetData, sheetData["range"], creds)
     l.debug("Done.\n")
             
     l.info("\n")
