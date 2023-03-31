@@ -41,9 +41,9 @@ def createEmailBodyWithPdfAttachment(senderEmail, receiverEmail, subject, htmlFi
         messageHTML = file.read()
     
     body = MIMEMultipart()
-    body["subject"] = subject
-    body["from"] = senderEmail
-    body["to"] = receiverEmail
+    body["Subject"] = subject
+    body["From"] = senderEmail
+    body["To"] = receiverEmail
     
     msg = MIMEText(messageHTML, "html")
     body.attach(msg)
@@ -63,7 +63,7 @@ def createEmailBodyWithPdfAttachment(senderEmail, receiverEmail, subject, htmlFi
     body.attach(msg)
     body = base64.urlsafe_b64encode(body.as_bytes())
     
-    return {'raw': body.decode()} 
+    return {'message': {'raw': body.decode()}}
 
 
 #? Creates a draft on the user's account and returns the ID of that draft
