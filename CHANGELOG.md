@@ -12,12 +12,19 @@
 
 ### Added
 - Requisition filler now helps you complete the type
+- Persistent bot for workflows and webhooks
+- `bot_run.py` for running the bot
 
 ### Fixed
 - `requirements.txt` file now is fully up to date
 - `newEntry` bugs
 - `requesitionPre` bugs
 - Email sending with attachment bugs
+
+### Changed
+- `run.py` from before is now `CLI_run.py`
+- README.md file
+- moved `settings.json` to root folder
 
 ## v1.0.0
 

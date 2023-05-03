@@ -130,7 +130,6 @@ dmypy.json
 
 # USER DEFINED
 env/*
-res/settings.json
 res/credentials.json
 test.py
 \~*
@@ -140,3 +139,4 @@ bin/
 *.db
 testFiles/
 .vscode/
+settings.json

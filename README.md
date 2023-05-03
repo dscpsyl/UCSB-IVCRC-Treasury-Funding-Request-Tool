@@ -162,9 +162,14 @@ pip install -r requirements.txt
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+TO run the bot, run the following command in a shell you can leave open.
+```sh
+python bot_run.py
+```
+
 To run the CLI, run the following command in the root directory of the project.
 ```sh
-python run.py
+python CLI_run.py
 ```
 
 On first startup, there will be a few options you will need to select yes to create credentials, the database, and other files. After that, you will be able to use the CLI without this step. As with any CLI, follow the instructions on screen.
