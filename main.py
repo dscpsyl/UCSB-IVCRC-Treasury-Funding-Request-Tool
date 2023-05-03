@@ -817,7 +817,7 @@ def main():
     
     #? Load in Settings 
     l.debug("Loading Settings...")
-    with open("res/settings.json") as file:
+    with open("settings.json") as file:
         settings = js.load(file)
     l.debug("Done")
         
