@@ -249,6 +249,14 @@ The `env` folder contains all the necessary environment variables for the CLI to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+#### The Bot
+The bot currently has two functions: weekly meeting reminders, and member reports. Both are hooked by a workflow created in the workspace to set the time of trigger.
+
+##### Message Reminder
+When first setting up the reminder, the user will choose a time to trigger and specify a message. This message is stored in the `settings.json` file that will be used in the future. When the `execute` method is called with the workflow trigger, the bot will post a message into the *IVCRC-general* channel with the pre-defined text.
+
+##### Member Report
+[TO BE ADDED]
 
 
 <!-- ROADMAP -->
