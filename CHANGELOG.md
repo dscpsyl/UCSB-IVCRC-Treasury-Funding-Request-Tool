@@ -7,6 +7,10 @@
 >`Fixed` for any bug fixes.
 >`Security` in case of vulnerabilities.
 
+## v1.0.2
+
+### Fixed
+- `main.py` now has the right `settings.json` file
 
 ## v1.0.1
 
