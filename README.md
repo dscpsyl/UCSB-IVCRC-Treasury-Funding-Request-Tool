@@ -247,8 +247,6 @@ The `res` folder contains all the necessary files for the CLI to run. These are 
 #### env Folder
 The `env` folder contains all the necessary environment variables for the CLI to run. This is the folder where the db file and credentials are stired. Temporary files from the CLI are also stored here. Any file besides the db file and credentials can be deleted if needed but lingering files will not affect the CLI.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 #### The Bot
 The bot currently has two functions: weekly meeting reminders, and member reports. Both are hooked by a workflow created in the workspace to set the time of trigger.
 
@@ -258,6 +256,7 @@ When first setting up the reminder, the user will choose a time to trigger and s
 ##### Member Report
 [TO BE ADDED]
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
