@@ -7,6 +7,8 @@
 >`Fixed` for any bug fixes.
 >`Security` in case of vulnerabilities.
 
+## v1.0.3
+
 ## v1.0.2
 
 ### Added
