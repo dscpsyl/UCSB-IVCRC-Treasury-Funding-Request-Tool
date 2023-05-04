@@ -9,6 +9,9 @@
 
 ## v1.0.2
 
+### Added
+- Added weekly meeting reminders to the bot
+
 ### Fixed
 - `main.py` now has the right `settings.json` file
 
