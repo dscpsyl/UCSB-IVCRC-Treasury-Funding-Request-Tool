@@ -9,8 +9,14 @@
 
 ## v1.0.3
 
+## Added
+- slackBot folder for better organization
+- More function docstrings
+
 ### Changed
 - `README.md` to include the new slack bot
+- Restructured `bot_run.py` to be more readable
+- Updated `requirements.txt` to include slackbot
 ## v1.0.2
 
 ### Added
