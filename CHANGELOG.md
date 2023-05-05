@@ -12,6 +12,7 @@
 ## Added
 - slackBot folder for better organization
 - More function docstrings
+- Placeholder so env folder will show
 
 ### Changed
 - `README.md` to include the new slack bot
