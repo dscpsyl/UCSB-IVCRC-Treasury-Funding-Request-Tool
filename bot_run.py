@@ -58,7 +58,7 @@ def execute_weeklyReminderWorkflow(step, complete, fail):
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": f"Hello Chair! Please complete the following form to update the weekly meeting reminder message for {dt.now().strftime('%m/%d/%Y')} at least an hour before the meeting time!"
+				"text": f"Hello Chair! Please complete the following form to update the weekly meeting reminder message for {dt.now().strftime('%m/%d/%Y')} at least an 24 hours before the meeting time!"
 			}
 		},
 		{
