@@ -162,10 +162,19 @@ pip install -r requirements.txt
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-TO run the bot, run the following command in a shell you can leave open.
+To run the bot, run the following command in a shell you can leave open.
 ```sh
 python bot_run.py
 ```
+
+The bot has two feactures:
+1. The bot will work with Slack Workflows as a trigger to send out chair meeting forms and meeting reminders every week. There must be a Slack Workflow for both the Chair Meeting Reminder and the Meeting Reminder for everything to work well. If the chair does not submit the form before the app needs to send the meeting reminder message (24 hours ahead of the meeting time, set by the workflow trigger time), then the app will default to tagging the Chair and appending a small note at the end.
+2. The bot will work with Slack Workflows as a trigger to send out member report forms for every IVCRC member. This is set while setting up the workflow. The bot will check for the member report submission 30 min before the meeting time (also set when setting up the workflow). If the member does not submit the form before the app needs to create the agenda, then the form message will be replaced and the agenda section will be left blank. The bot will automatically compile all responses into a single word doc to be uploaded to Google Drive for user to use. 
+
+If you notice, this bot's weekly automation depends on Soack Workflows. This is becasue I am too lazy to implement my own timing tirggers. In the future, however, for reliability, implementing time triggers should be a priority.
+
+*In the future, we would want this command to be part of the CLI that is running and any output should be given to a log.*
+
 
 To run the CLI, run the following command in the root directory of the project.
 ```sh
@@ -194,11 +203,11 @@ There are 4 different categories that comes with this CLI with their own command
 3. Database - Database viewing and manual manipulation.
    1. View All Requests
     - This will display all the requests in the database with the following format: `[Request Number, Name, Recipient, Amount Funded, Contact Name, Contact Email]`
-   1. View Single Request Details
+   2. View Single Request Details
     - This will display more details of a single request in the database with the following format: `[Request Number, Minutes ID, Funding Agreement ID, Follow-up Report ID, SlackTS] [Event Name, Reciepent, Category Number, Amount Funded, Contact Name, Contact Email] `
-   2. Delete Request
+   3. Delete Request
     - This will delete a single request in the database.
-   3. Update Request
+   4. Update Request
     - This will update the `data` dictionary of a request in the database.
 4. Utils - Utilities that can be used independently from the rest of the CLI.
    1. Requisition Filler

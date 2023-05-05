@@ -10,7 +10,7 @@
 ## v1.0.3
 
 ### Changed
-- Refactored bot code so that it is now in it's own folder with a main run file.
+- `README.md` to include the new slack bot
 ## v1.0.2
 
 ### Added
