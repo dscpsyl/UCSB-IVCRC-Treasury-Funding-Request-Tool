@@ -255,17 +255,17 @@ def requisitionPre(settings, slackClient, creds, conn):
     os.remove(meetingPdfLoc)
     l.debug("Done.\n")
     
-    #? Send message to publicity
-    l.info("Sending slack message to publicity...")
-    pubMsg = "Hey guys! Please start making a promotional material for " + data["name"]
-    slack.sendTxtMsg(pubMsg, settings["SLACK_PUBLICITY_CHANNEL_ID"], slackClient)
-    l.info("Done.\n")
+    # #? Send message to publicity
+    # l.info("Sending slack message to publicity...")
+    # pubMsg = "Hey guys! Please start making a promotional material for " + data["name"]
+    # slack.sendTxtMsg(pubMsg, settings["SLACK_PUBLICITY_CHANNEL_ID"], slackClient)
+    # l.info("Done.\n")
     
-    l.info("Sending slack message to history channel...")
-    #? Send message to history
-    histMsg = data["name"] + " by " + data["recipient"] + " on " + data["dateStart"] + ". Contact " + data["contactName"] + "(" + data["contactEmail"] + ") for more information."
-    slack.sendTxtMsg(histMsg, settings["SLACK_HISTORY_CHANNEL_ID"], slackClient)
-    l.info("Done.\n")
+    # l.info("Sending slack message to history channel...")
+    # #? Send message to history
+    # histMsg = data["name"] + " by " + data["recipient"] + " on " + data["dateStart"] + ". Contact " + data["contactName"] + "(" + data["contactEmail"] + ") for more information."
+    # slack.sendTxtMsg(histMsg, settings["SLACK_HISTORY_CHANNEL_ID"], slackClient)
+    # l.info("Done.\n")
     
     
     l.info("\n")
