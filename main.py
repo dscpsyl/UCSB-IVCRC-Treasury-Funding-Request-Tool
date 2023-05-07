@@ -236,7 +236,7 @@ def requisitionPre(settings, slackClient, creds, conn):
         sTags += "<@" + t + ">"
     
     msg = sTags + " Could I please have our committee director and another authorized signer help complete this funding requests? Thanks!"
-    fileId = slack.sendMsgWithAttachment(msg, pdfFile, dataGet.getSchoolYear() + " IVCRC F" + data["reqNum"] + " " + data["name"] + " ("  + data["recipient"] + ")", settings["SLACK_TREASURER_CHANNEL_ID"], slackClient, slackTs)
+    fileId = slack.sendMsgWithAttachment(msg, pdfFile, dataGet.getSchoolYear() + " IVCRC F" + data["reqNum"] + " " + data["name"] + " ("  + data["recipient"] + ").pdf", settings["SLACK_TREASURER_CHANNEL_ID"], slackClient, slackTs)
     l.info("Done.\n")
     
     #? Move Funding Agreement, Meeting Minutes, Followup Report to the archive folder

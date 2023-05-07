@@ -9,6 +9,15 @@
 
 ## v1.0.3
 
+### Added
+- Slack bot folder for better integration with slack
+
+### Changed:
+- Reorganized `bot_run.py` to be more readable
+
+### Fixed
+- pdf files not beign recognized when uploaded to Slack
+
 ## Added
 - slackBot folder for better organization
 - More function docstrings
